@@ -6,7 +6,15 @@ public class FrequencyTest {
 	public static int frequency(String text, String word) {
 
 		int c = 0;
+		
+		/*
+		 * We split the text against a regular expression in order to separate "words".
+		 * Currently we are considering that the possible separator is ' ' (space) or '.' (dot).
+		 * We can handle more separators (for example '?', '!', ':', etc.) by adding them to the regexp,
+		 * which could give the following : text.split(" | "\\.|?|!|:")
+		 */
 		String[] words = text.split(" |\\.");
+		
 		for (int i = 0; i < words.length; i++) {
 			if (word.equalsIgnoreCase(words[i]))
 				++c;
