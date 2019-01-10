@@ -1,11 +1,12 @@
+package main;
 import java.util.*;
 
-class FrequencyTest {
+public class FrequencyTest {
 
 	public static int frequency(String text, String word) {
 
 		int c = 0;
-		String[] words = text.split(" ");
+		String[] words = text.split(" |\\.");
 		for (int i = 0; i < words.length; i++) {
 			if (word.equalsIgnoreCase(words[i]))
 				++c;
